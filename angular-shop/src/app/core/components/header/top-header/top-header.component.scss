@@ -1,0 +1,87 @@
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-header-container {
+  @include flex;
+  margin: 0 3rem 0 3rem;
+
+  .location-btn {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    margin-right: auto;
+    margin-bottom: 2px;
+    text-align: left;
+    border: 0;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+    background: none;
+    transition: color 0.2s ease;
+
+    span {
+      margin-left: 5px;
+    }
+  }
+
+  .contacts-container {
+    @include flex;
+    width: 520px;
+    justify-content: space-around;
+
+    .viber-contact {
+      @include flex;
+    }
+
+    .a1-contact {
+      @include flex;
+
+      & img {
+        height: 25px;
+        width: 25px;
+      }
+    }
+
+    .contacts-dropdown {
+      width: 200px;
+      position: relative;
+
+      .mat-expansion-panel {
+        position: absolute;
+        top: -15px;
+        width: 200px;
+        z-index: 2;
+
+        .dropdown-contact {
+          @include flex;
+          justify-content: flex-start;
+          margin-top: 3px;
+        }
+
+        p {
+          max-width: 400px;
+        }
+
+        img {
+          width: 19px;
+        }
+      }
+    }
+  }
+  .contact-center {
+    @include flex;
+    font-size: 12px;
+    color: rgb(107, 101, 104);
+
+    .contact-center-logo {
+      margin: 5px;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
