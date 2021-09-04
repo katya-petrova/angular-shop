@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-shadow */
 import { Component, OnInit } from '@angular/core';
+import { LocationService } from 'src/app/core/services/location.service';
 
 @Component({
   selector: 'app-top-header',
@@ -8,6 +10,18 @@ import { Component, OnInit } from '@angular/core';
 export class TopHeaderComponent implements OnInit {
   public panelOpenState = false;
 
+  public ipaddress:string = '';
+
+  public city:string = '';
+
+  constructor(private locationService: LocationService) {}
+
   ngOnInit(): void {
+    this.locationService.getIpAddress().subscribe((res) => {
+      this.ipaddress = res.ip;
+      this.locationService.getGEOLocation(this.ipaddress).subscribe((res) => {
+        this.city = res.city;
+      });
+    });
   }
 }
