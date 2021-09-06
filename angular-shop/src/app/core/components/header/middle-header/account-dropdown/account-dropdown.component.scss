@@ -1,0 +1,41 @@
+.account-dropdown {
+  width: 200px;
+  padding: 12px 27px;
+  border-radius: 6px;
+  // box-shadow: 0 4px 12px 0 rgb(41 44 51 / 12%), 0 2px 2px 0 rgb(41 44 51 / 4%);
+  z-index: 15;
+  .user-auth {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    img {
+      width: 55px;
+    }
+    .auth-btn {
+      display: block;
+      margin: 0 auto;
+      padding: 10px 24px;
+      border: 0;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 14px;
+      background: #718c31;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+  }
+  .shopping-cart,
+  .favorites,
+  .watched,
+  .comparison {
+    display: flex;
+    margin-top: 12px;
+    cursor: pointer;
+    .mat-icon {
+      margin-top: -3px;
+      margin-right: 8px;
+  }
+  }
+}

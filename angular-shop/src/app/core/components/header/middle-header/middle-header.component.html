@@ -25,13 +25,17 @@
       </div>
     </form>
   </div>
-  <div class="profile">
+  <div [matMenuTriggerFor]="menu" #menuTrigger class="profile">
     <button type="button" class="btn mb-2 mb-md-0 btn-primary btn-block btn-round"><span>Аккаунт</span>
       <div class="icon icon-round d-flex align-items-center justify-content-center">
         <mat-icon>account_circle</mat-icon>
       </div>
       </button>
   </div>
+  <mat-menu #menu="matMenu" xPosition="after">
+  <app-account-dropdown></app-account-dropdown>
+  </mat-menu>
+
   <div class="basket">
     <button type="button" class="btn mb-2 mb-md-0 btn-primary btn-block btn-round"><span>Корзина</span>
       <div class="icon icon-round d-flex align-items-center justify-content-center">

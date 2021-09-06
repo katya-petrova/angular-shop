@@ -55,6 +55,11 @@
         width: 200px;
         z-index: 2;
 
+        .mat-expansion-panel-header {
+          padding: 0 16px;
+          height: 29px;
+      }
+
         .dropdown-contact {
           @include flex;
           justify-content: flex-start;
