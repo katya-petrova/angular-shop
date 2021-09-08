@@ -1,9 +1,11 @@
 <div class="account-dropdown">
+  <p class="username">{{userName}}</p>
   <div class="user-auth">
     <div class="user-po">
       <img src="../../../../../../assets/icons/user.png" alt="user">
     </div>
-    <button class="auth-btn">Войти</button>
+    <button *ngIf="!isLogged" mat-button (click)="openDialog()" class="auth-btn">Войти</button>
+    <button *ngIf="isLogged" mat-raised-button color="warn" (click)="logOut()" class="logout-btn">Выйти</button>
   </div>
   <div class="shopping-cart">
     <mat-icon>shopping_cart</mat-icon>

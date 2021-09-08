@@ -4,6 +4,9 @@
   border-radius: 6px;
   // box-shadow: 0 4px 12px 0 rgb(41 44 51 / 12%), 0 2px 2px 0 rgb(41 44 51 / 4%);
   z-index: 15;
+  .username {
+    text-align: center;
+  }
   .user-auth {
     display: flex;
     flex-direction: column;
@@ -15,7 +18,7 @@
     .auth-btn {
       display: block;
       margin: 0 auto;
-      padding: 10px 24px;
+      // padding: 10px 24px;
       border: 0;
       border-radius: 4px;
       font-family: inherit;

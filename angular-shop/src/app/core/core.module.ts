@@ -5,12 +5,14 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
+import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { TopHeaderComponent } from './components/header/top-header/top-header.component';
 import { MiddleHeaderComponent } from './components/header/middle-header/middle-header.component';
 import { CategoriesHeaderComponent } from './components/header/categories-header/categories-header.component';
 import { AccountDropdownComponent } from './components/header/middle-header/account-dropdown/account-dropdown.component';
 import { MainModule } from '../main/main.module';
+import { AuthPopupComponent } from './components/auth-popup/auth-popup.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { MainModule } from '../main/main.module';
     MiddleHeaderComponent,
     CategoriesHeaderComponent,
     AccountDropdownComponent,
+    AuthPopupComponent,
   ],
   imports: [
     CommonModule,
@@ -28,6 +31,7 @@ import { MainModule } from '../main/main.module';
     MatExpansionModule,
     MatMenuModule,
     MainModule,
+    FormsModule,
   ],
   exports: [
     HeaderComponent,
