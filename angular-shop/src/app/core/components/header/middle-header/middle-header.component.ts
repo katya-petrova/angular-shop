@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-// import { MatDialog } from '@angular/material/dialog';
 import { MatMenuTrigger } from '@angular/material/menu';
 
 @Component({
@@ -10,8 +9,14 @@ import { MatMenuTrigger } from '@angular/material/menu';
 export class MiddleHeaderComponent implements OnInit {
   @ViewChild('menuTrigger') menuTrigger!: MatMenuTrigger;
 
+  public showCatalogue = false;
+
   // constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleCatalogue() {
+    this.showCatalogue = !this.showCatalogue;
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import SwiperCore, {
   SwiperOptions, Autoplay, Pagination, Navigation,
 } from 'swiper';
+import { SaleService } from '../../services/sale.service';
 
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
@@ -12,9 +13,10 @@ SwiperCore.use([Autoplay, Pagination, Navigation]);
   encapsulation: ViewEncapsulation.None,
 })
 export class MainSwiperComponent implements OnInit {
-  // constructor() { }
+  constructor(public saleService: SaleService) { }
 
   ngOnInit(): void {
+    this.saleService.getSaleGoods().subscribe((data) => console.log(data));
   }
 
   config: SwiperOptions = {

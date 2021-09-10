@@ -13,6 +13,8 @@ import { CategoriesHeaderComponent } from './components/header/categories-header
 import { AccountDropdownComponent } from './components/header/middle-header/account-dropdown/account-dropdown.component';
 import { MainModule } from '../main/main.module';
 import { AuthPopupComponent } from './components/auth-popup/auth-popup.component';
+import { CatalogueComponent } from './components/catalogue/catalogue.component';
+import { CategoriesComponent } from './components/catalogue/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { AuthPopupComponent } from './components/auth-popup/auth-popup.component
     CategoriesHeaderComponent,
     AccountDropdownComponent,
     AuthPopupComponent,
+    CatalogueComponent,
+    CategoriesComponent,
   ],
   imports: [
     CommonModule,

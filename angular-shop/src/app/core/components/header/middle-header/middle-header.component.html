@@ -2,7 +2,7 @@
   <div class="shop-logo">
     <img src="../../../../../assets/icons/shop-logo.png" alt="logo">
   </div>
-  <div class="catalogue">
+  <div class="catalogue" (click)=toggleCatalogue()>
     <button type="button" class="btn mb-2 mb-md-0 btn-primary btn-block btn-round"><span>Каталог товаров</span>
       <div class="icon icon-round d-flex align-items-center justify-content-center">
         <mat-icon>shopping_basket</mat-icon>
@@ -10,7 +10,7 @@
       </button>
   </div>
   <div class="searchbar">
-    <form>
+    <form autocomplete="off">
       <div class="search-form">
         <div class="input-field first-wrap">
           <div class="svg-wrapper">
@@ -44,3 +44,4 @@
       </button>
   </div>
 </div>
+<app-catalogue *ngIf="showCatalogue"></app-catalogue>

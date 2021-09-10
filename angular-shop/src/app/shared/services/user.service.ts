@@ -8,7 +8,9 @@ import { IUserInfo } from '../models/user-info.model';
 export class UserService {
   userInfo$: EventEmitter<IUserInfo | null> = new EventEmitter();
 
-  isLogged$: EventEmitter<boolean> = new EventEmitter();
+  // isLogged$: EventEmitter<boolean> = new EventEmitter();
+
+  test!:boolean;
 
   constructor(private http: HttpClient) { }
 
@@ -16,9 +18,7 @@ export class UserService {
     const token = localStorage.getItem('token');
     if (token) {
       this.getUserInfo(token);
-      this.isLogged$.emit(true);
     } else {
-      this.isLogged$.emit(false);
       this.userInfo$.emit(null);
     }
   }

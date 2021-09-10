@@ -14,11 +14,11 @@ import { AuthPopupComponent } from '../../../auth-popup/auth-popup.component';
 export class AccountDropdownComponent implements OnInit, OnDestroy {
   public userName: string | null | undefined;
 
-  public isLogged!: boolean;
+  public lastName: string | null | undefined;
+
+  public isLogged: boolean | true | undefined;
 
   userInfoSubscription!: Subscription;
-
-  isLoggedSubscription!: Subscription;
 
   constructor(
     public dialog: MatDialog,
@@ -27,13 +27,21 @@ export class AccountDropdownComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    // this.userService.isLogged();
+    this.userService.isLogged();
     this.userInfoSubscription = this.userService
-      .userInfo$.subscribe((info) => this.userName = info?.firstName);
-    this.isLoggedSubscription = this.userService.isLogged$.subscribe((data) => {
-      this.isLogged = data;
-      console.log(this.isLogged);
-    });
+      .userInfo$.subscribe((info) => {
+        this.userName = info?.firstName;
+        this.lastName = info?.lastName;
+        this.isUserLogged();
+      });
+  }
+
+  isUserLogged() {
+    if (this.userName) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
   }
 
   openDialog():void {
@@ -46,6 +54,5 @@ export class AccountDropdownComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.userInfoSubscription.unsubscribe();
-    this.isLoggedSubscription.unsubscribe();
   }
 }

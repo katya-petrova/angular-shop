@@ -1,0 +1,21 @@
+.catalogue {
+  display: flex;
+
+  .categories {
+    padding-right: 10px;
+    border-right: 1px solid #8080804a;
+  }
+
+  .cat-item{
+    cursor: pointer;
+  }
+
+  .cat-item:hover {
+    background: #abcc3669;
+  }
+
+  .subcategories {
+    cursor: pointer;
+    list-style-type: none;
+  }
+}
