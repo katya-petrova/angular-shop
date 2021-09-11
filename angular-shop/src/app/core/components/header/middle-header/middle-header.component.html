@@ -20,10 +20,11 @@
               </path>
             </svg>
           </div>
-          <input id="search" type="text" placeholder="What are you looking for?" />
+          <input [(ngModel)]="searchValue" (ngModelChange)="this.searchValueUpdate.next($event)" id="search" name="search" type="text" placeholder="What are you looking for?" />
         </div>
       </div>
     </form>
+    <app-search-results *ngIf="showResults"></app-search-results>
   </div>
   <div [matMenuTriggerFor]="menu" #menuTrigger class="profile">
     <button type="button" class="btn mb-2 mb-md-0 btn-primary btn-block btn-round"><span>Аккаунт</span>

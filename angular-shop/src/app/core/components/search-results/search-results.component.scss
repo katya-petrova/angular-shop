@@ -1,0 +1,32 @@
+.search-results {
+  position: absolute;
+  max-width: 35rem;
+  margin: 0 auto;
+  box-shadow: rgb(0 0 0 / 20%) 0 0 8px;
+  background: #fff;
+  z-index: 5;
+
+  ul {
+    padding: 0;
+  }
+
+  ul li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 10px;
+    img {
+      max-height: 52px;
+      max-width: 52px;
+      margin: 0 20px;
+    }
+
+    .item-price {
+      font-weight: 500;
+    }
+  }
+
+  li:hover {
+    outline: 1px solid green;
+  }
+}

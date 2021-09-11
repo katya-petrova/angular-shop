@@ -1,0 +1,11 @@
+<div class="search-results">
+  <ul class="results-list">
+    <li class="search-item" *ngFor="let item of searchResults">
+      <img src="{{ item.imageUrls[0] }}" alt="">
+      <div class="item-info">
+        <p class="item-name">{{ item.name }}</p>
+        <p class="item-price">{{ item.price }} бел.руб.</p>
+      </div>
+     </li>
+  </ul>
+</div>

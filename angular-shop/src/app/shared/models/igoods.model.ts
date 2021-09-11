@@ -4,7 +4,7 @@ export interface IGoods {
   }
 }
 
-interface Item {
+export interface Item {
   id: string,
   name: string,
   imageUrls: string[],

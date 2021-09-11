@@ -15,6 +15,7 @@ import { MainModule } from '../main/main.module';
 import { AuthPopupComponent } from './components/auth-popup/auth-popup.component';
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { CategoriesComponent } from './components/catalogue/categories/categories.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CategoriesComponent } from './components/catalogue/categories/categorie
     AuthPopupComponent,
     CatalogueComponent,
     CategoriesComponent,
+    SearchResultsComponent,
   ],
   imports: [
     CommonModule,
