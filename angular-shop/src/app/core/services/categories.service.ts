@@ -11,8 +11,8 @@ export class CategoriesService {
 
   constructor(private http: HttpClient) { }
 
-  getCategories():Observable<ICategories> {
-    return this.http.get<ICategories>(this.url);
+  getCategories():Observable<ICategories[]> {
+    return this.http.get<ICategories[]>(this.url);
     // .pipe(
     //   map((response: ICategories) => {
     //     const categories: string[] = response.subCategories.map((item:any) => item.name);

@@ -1,7 +1,11 @@
+/* eslint-disable prefer-destructuring */
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { ICategories } from 'src/app/core/models/categories.model';
 import { CategoriesService } from 'src/app/core/services/categories.service';
+import { getCategories } from 'src/app/ngrx/selectors/categories.selector';
+import { IAppState } from 'src/app/ngrx/state.models';
 
 @Component({
   selector: 'app-categories-page',
@@ -23,6 +27,7 @@ export class CategoriesPageComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private router: Router,
     public categoriesService: CategoriesService,
+    private store: Store<IAppState>,
   ) {}
 
   ngOnInit(): void {
@@ -30,18 +35,17 @@ export class CategoriesPageComponent implements OnInit, OnDestroy {
     this.getCurrentCategory(this.resultId);
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
-        this.resultId = val.url.toString().slice(1);
+        this.resultId = val.url.toString().split('/')[1];
         this.getCurrentCategory(this.resultId);
       }
     });
   }
 
   getCurrentCategory(value:string) {
-    this.categoriesService.getCategories().subscribe((data) => {
+    this.store.select<ICategories[]>(getCategories).subscribe((data) => {
       this.categories = data;
       this.currentCategory = this.categories.find((obj:ICategories) => obj.id === value);
       this.subCategories = this.currentCategory.subCategories;
-      console.log('i work');
       this.categoryName = this.currentCategory.name;
     });
   }
