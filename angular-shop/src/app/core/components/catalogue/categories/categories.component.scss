@@ -17,5 +17,9 @@
   .subcategories {
     cursor: pointer;
     list-style-type: none;
+
+    .current-category {
+      margin-left: 40px;
+    }
   }
 }

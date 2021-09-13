@@ -1,0 +1,6 @@
+<div class="subcategories">
+  <h3 class="current-category">{{ categoryName }}</h3>
+  <ul class="subcategories-list">
+    <li *ngFor="let subcategory of subCategories"> <a [routerLink]="[subcategory.id]" routerLinkActive="active"> {{ subcategory.name }} </a></li>
+  </ul>
+</div>

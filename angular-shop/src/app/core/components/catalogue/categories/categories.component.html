@@ -1,13 +1,21 @@
 <div class="catalogue">
   <div class="categories-container">
   <ul class="categories">
-    <li class="cat-item" *ngFor="let category of categories" (mouseover)="getSubcategory(category)">{{ category.name }}</li>
+    <li class="cat-item"
+    *ngFor="let category of categories"
+    (mouseover)="getSubcategory(category)"
+    (click)="goToCatergoriesPage('', category.id)"
+    routerLinkActive="active"
+    >{{ category.name }}</li>
   </ul>
 </div>
   <div class="subcategories">
     <div class="subcategories-container">
+      <h3 class="current-category">{{ currentCategory }}</h3>
       <ul class="subcategories">
-        <li *ngFor="let subcategory of subCategories">{{ subcategory.name }}</li>
+        <li
+        *ngFor="let subcategory of subCategories"
+        > <a [routerLink]="[ categoryId, subcategory.id]" routerLinkActive="active"> {{ subcategory.name }} </a> </li>
       </ul>
     </div>
   </div>

@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { TopHeaderComponent } from './components/header/top-header/top-header.component';
 import { MiddleHeaderComponent } from './components/header/middle-header/middle-header.component';
@@ -38,6 +39,7 @@ import { SearchResultsComponent } from './components/search-results/search-resul
     MatMenuModule,
     MainModule,
     FormsModule,
+    RouterModule,
   ],
   exports: [
     HeaderComponent,

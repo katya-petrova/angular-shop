@@ -6,5 +6,5 @@ export interface SubCategories {
 export interface ICategories {
   id: string;
   name: string;
-  subCategories: SubCategories;
+  subCategories: SubCategories [];
 }
