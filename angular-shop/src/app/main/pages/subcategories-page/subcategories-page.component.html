@@ -1,1 +1,31 @@
 <h1>Subcategories!</h1>
+<div class="subcats-page-wrapper">
+  <!-- <div class="subcat-products"> -->
+     <div *ngFor="let product of products" class="product">
+        <img src="{{ product.imageUrls[0] }}" alt="">
+        <div class="product-raiting">
+          <ng-template #t let-fill="fill">
+          <span class="star" [class.full]="fill === 100">
+            <span class="half" [style.width.%]="fill">&star;</span>&star;
+          </span>
+        </ng-template>
+
+        <ngb-rating [rate]="product.rating" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+        </div>
+
+
+        <div class="product-option">
+          <ul class="product-options-list">
+            <li><button><mat-icon>shopping_cart</mat-icon></button></li>
+            <li><button><mat-icon>favorite_border</mat-icon></button></li>
+            <li><button><mat-icon>search</mat-icon></button></li>
+            </ul>
+        </div>
+        <div class="product-info">
+            <p class="product-name">{{ product.name }}</p>
+            <p class="product-price">{{ product.price }} p.</p>
+        </div>
+    </div>
+  <!-- </div> -->
+
+</div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CategoriesService } from 'src/app/core/services/categories.service';
+import { Item } from 'src/app/shared/models/igoods.model';
 
 @Component({
   selector: 'app-subcategories-page',
@@ -11,14 +13,25 @@ export class SubcategoriesPageComponent implements OnInit {
 
   subcategoryId!: string;
 
+  products!: Item[];
+
+  currentRate = 3.14;
+
   constructor(
     private route: ActivatedRoute,
+    public categoriesService: CategoriesService,
     private router: Router,
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.categoryId = this.route.snapshot.params.category;
     this.subcategoryId = this.route.snapshot.params.sub;
-    console.log(this.route.snapshot.params);
+    this.categoriesService
+      .getItemsByCategory(this.categoryId, this.subcategoryId)
+      .subscribe((data) => {
+        this.products = data;
+        console.log(data);
+      });
   }
 }

@@ -10,6 +10,7 @@ export interface Item {
   imageUrls: string[],
   availableAmount: number,
   price: number,
+  rating: number,
   description: string,
   isInCart: boolean,
   isFavorite: boolean,
