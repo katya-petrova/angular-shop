@@ -1,31 +1,46 @@
-<h1>Subcategories!</h1>
 <div class="subcats-page-wrapper">
-  <!-- <div class="subcat-products"> -->
-     <div *ngFor="let product of products" class="product">
-        <img src="{{ product.imageUrls[0] }}" alt="">
-        <div class="product-raiting">
-          <ng-template #t let-fill="fill">
+  <div class="product-sorting">
+    <p class="filter">Сортировать по:</p>
+    <p class="filter-param" (click)="sortByPrice()">цене</p>
+    <p class="filter-param" (click)="sortByRating()">популярности</p>
+  </div>
+
+  <div class="subcat-products">
+    <div *ngFor="let product of products | slice : startPage:paginationLimit | sortPipe:sortValue" class="product">
+      <div class="product-img" [ngStyle]="{ 'background-image': 'url(' + product.imageUrls[0] + ')' }"></div>
+
+      <div class="product-raiting">
+        <ng-template #t let-fill="fill">
           <span class="star" [class.full]="fill === 100">
-            <span class="half" [style.width.%]="fill">&star;</span>&star;
+            <span class="half" [style.width.%]="fill">&starf;</span>&star;
           </span>
         </ng-template>
-
         <ngb-rating [rate]="product.rating" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
-        </div>
+      </div>
 
+      <div class="product-info">
+        <p class="product-name">{{ product.name }}</p>
+        <p class="product-price">{{ product.price }} p.</p>
+      </div>
 
-        <div class="product-option">
-          <ul class="product-options-list">
-            <li><button><mat-icon>shopping_cart</mat-icon></button></li>
-            <li><button><mat-icon>favorite_border</mat-icon></button></li>
-            <li><button><mat-icon>search</mat-icon></button></li>
-            </ul>
-        </div>
-        <div class="product-info">
-            <p class="product-name">{{ product.name }}</p>
-            <p class="product-price">{{ product.price }} p.</p>
-        </div>
+      <div class="product-option">
+        <ul class="product-options-list">
+          <li><button class="add-to-card">
+              <span>В корзину</span>
+              <mat-icon>shopping_cart</mat-icon>
+            </button></li>
+          <li><button class="add-to-favorite">
+              <span>В избранное</span>
+              <mat-icon>favorite_border</mat-icon>
+            </button></li>
+        </ul>
+      </div>
+
     </div>
-  <!-- </div> -->
+  </div>
+
+  <button mat-raised-button class="load-more-btn" (click)="showMoreItems()">
+    Показать еще
+  </button>
 
 </div>

@@ -9,20 +9,23 @@ import { Item } from 'src/app/shared/models/igoods.model';
   styleUrls: ['./subcategories-page.component.scss'],
 })
 export class SubcategoriesPageComponent implements OnInit {
-  categoryId!: string;
+  public categoryId!: string;
 
-  subcategoryId!: string;
+  public subcategoryId!: string;
 
-  products!: Item[];
+  public products!: Item[];
 
-  currentRate = 3.14;
+  public startPage = 0;
+
+  public paginationLimit = 6;
+
+  public sortValue!: number;
 
   constructor(
     private route: ActivatedRoute,
     public categoriesService: CategoriesService,
     private router: Router,
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
     this.categoryId = this.route.snapshot.params.category;
@@ -31,7 +34,18 @@ export class SubcategoriesPageComponent implements OnInit {
       .getItemsByCategory(this.categoryId, this.subcategoryId)
       .subscribe((data) => {
         this.products = data;
-        console.log(data);
       });
+  }
+
+  public showMoreItems() {
+    this.paginationLimit = Number(this.paginationLimit) + 3;
+  }
+
+  public sortByPrice() {
+    this.sortValue = this.sortValue === 1 ? -1 : 1;
+  }
+
+  public sortByRating() {
+    this.sortValue = this.sortValue === 2 ? -2 : 2;
   }
 }

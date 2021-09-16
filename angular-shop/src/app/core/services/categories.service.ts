@@ -25,7 +25,7 @@ export class CategoriesService {
   }
 
   getItemsByCategory(category: string, subcategory: string) {
-    const url = `${this.url}/goods/category/${category}/${subcategory}?start=1&count=6`;
+    const url = `${this.url}/goods/category/${category}/${subcategory}?start=1&count=20`;
     return this.http.get<Item[]>(url);
   }
 }
