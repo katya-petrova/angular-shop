@@ -28,6 +28,7 @@ export class SubcategoriesPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log('hello from subs');
     this.categoryId = this.route.snapshot.params.category;
     this.subcategoryId = this.route.snapshot.params.sub;
     this.categoriesService
@@ -47,5 +48,9 @@ export class SubcategoriesPageComponent implements OnInit {
 
   public sortByRating() {
     this.sortValue = this.sortValue === 2 ? -2 : 2;
+  }
+
+  public goToItemPage(url: string, id: string) {
+    this.router.navigate([url, id]);
   }
 }

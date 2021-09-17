@@ -4,7 +4,7 @@
     90deg,
     rgba(141, 173, 61, 1) 0%,
     rgba(157, 200, 26, 1) 51%,
-    rgba(0, 255, 1, 1) 100%
+    #adce37 100%
   );
   .categories-container {
     margin: 0 3rem 0 3rem;
@@ -16,7 +16,14 @@
 
       li {
         padding: 0.5rem;
+        font-size: 16px;
+        font-weight: 400;
+
         cursor: pointer;
+
+        a {
+          color: black;
+        }
       }
     }
   }

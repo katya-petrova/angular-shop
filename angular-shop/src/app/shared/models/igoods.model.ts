@@ -8,7 +8,7 @@ export interface Item {
   id: string,
   name: string,
   imageUrls: string[],
-  availableAmount: number,
+  availableAmount: string,
   price: number,
   rating: number,
   description: string,

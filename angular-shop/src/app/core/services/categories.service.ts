@@ -14,18 +14,15 @@ export class CategoriesService {
 
   getCategories():Observable<ICategories[]> {
     return this.http.get<ICategories[]>('http://localhost:3004/categories');
-    // .pipe(
-    //   map((response: ICategories) => {
-    //     const categories: string[] = response.subCategories.map((item:any) => item.name);
-    //     console.log(categories);
-    //     console.log('work');
-    //     return categories;
-    //   }),
-    // );
   }
 
   getItemsByCategory(category: string, subcategory: string) {
     const url = `${this.url}/goods/category/${category}/${subcategory}?start=1&count=20`;
     return this.http.get<Item[]>(url);
+  }
+
+  getItemById(id: string) {
+    const url = `${this.url}/goods/item/${id}`;
+    return this.http.get<Item>(url);
   }
 }

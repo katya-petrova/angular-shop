@@ -8,18 +8,18 @@
   .product-sorting {
     display: flex;
     .filter {
-    font-weight: 500;
-    margin: 15px;
-  }
-  .filter-param {
-    margin: 15px;
-    cursor: pointer;
-
-    &:hover {
-      color: blueviolet;
-      text-decoration: underline;
+      font-weight: 500;
+      margin: 15px;
     }
-  }
+    .filter-param {
+      margin: 15px;
+      cursor: pointer;
+
+      &:hover {
+        color: blueviolet;
+        text-decoration: underline;
+      }
+    }
   }
 
   .subcat-products {
@@ -42,6 +42,16 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+
+    .product-stock {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      background: #719e00;
+    }
   }
 
   .product-options-list {
