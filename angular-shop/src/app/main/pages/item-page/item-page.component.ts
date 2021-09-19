@@ -4,6 +4,7 @@ import { CategoriesService } from 'src/app/core/services/categories.service';
 import { Item } from 'src/app/shared/models/igoods.model';
 // import { SwiperComponent } from 'swiper/angular';
 import SwiperCore, { Navigation, Thumbs } from 'swiper';
+import { ItemOptionsService } from '../../services/item-options.service';
 
 SwiperCore.use([Navigation, Thumbs]);
 
@@ -25,6 +26,7 @@ export class ItemPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     public categoriesService: CategoriesService,
+    private itemOptionsService: ItemOptionsService,
   ) {}
 
   ngOnInit(): void {
@@ -35,5 +37,25 @@ export class ItemPageComponent implements OnInit {
       console.log(this.item);
     });
     console.log(this.itemId);
+  }
+
+  public addToCart(id: string) {
+    this.itemOptionsService.addToCart(id).subscribe();
+    this.itemOptionsService.updateUserInfo();
+  }
+
+  public deleteFromCart(id: string) {
+    this.itemOptionsService.deleteFromCart(id).subscribe();
+    this.itemOptionsService.updateUserInfo();
+  }
+
+  public addToFavorite(id: string) {
+    this.itemOptionsService.addToFavorite(id).subscribe();
+    this.itemOptionsService.updateUserInfo();
+  }
+
+  public deleteFromFavorite(id: string) {
+    this.itemOptionsService.deleteFromFavorite(id).subscribe();
+    this.itemOptionsService.updateUserInfo();
   }
 }

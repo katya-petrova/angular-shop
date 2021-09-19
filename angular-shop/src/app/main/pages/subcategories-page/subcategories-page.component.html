@@ -30,16 +30,33 @@
       </div>
 
       <div class="product-option">
+
         <ul class="product-options-list">
-          <li><button class="add-to-card">
-              <span>В корзину</span>
-              <mat-icon>shopping_cart</mat-icon>
+
+          <li><button appAddToCart [id]="product.id"
+            class="add-to-card" (click)="addToCart(product.id)">
+              <span>В корзину</span><mat-icon>shopping_cart</mat-icon>
             </button></li>
-          <li><button class="add-to-favorite">
+
+            <li><button appDeleteFromCart [id]="product.id"
+              class="delete-from-card" (click)="deleteFromCart(product.id)">
+                <span>Удалить из</span><mat-icon>shopping_cart</mat-icon>
+              </button></li>
+
+          <li><button appAddToFavorite [id]="product.id"
+            class="add-to-favorite" (click)="addToFavorite(product.id)">
               <span>В избранное</span>
               <mat-icon>favorite_border</mat-icon>
             </button></li>
+
+            <li><button appDeleteFromFavorite [id]="product.id"
+              class="delete-from-favorite" (click)="deleteFromFavorite(product.id)">
+              <span>Удалить из</span>
+              <mat-icon>favorite_border</mat-icon>
+            </button></li>
+
         </ul>
+
       </div>
 
     </div>

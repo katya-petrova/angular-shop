@@ -4,14 +4,30 @@
 <p class="item-price">{{item.price}} бел.руб.</p>
 <div class="item-option">
   <ul class="item-options-list">
-    <li><button class="add-to-card">
+
+    <li><button appAddToCart [id]="item.id"
+      class="add-to-card" (click)="addToCart(item.id)">
         <span>В корзину</span>
         <mat-icon>shopping_cart</mat-icon>
       </button></li>
-    <li><button class="add-to-favorite">
+
+      <li><button appDeleteFromCart [id]="item.id"
+        class="delete-from-card" (click)="deleteFromCart(item.id)">
+          <span>Удалить из</span><mat-icon>shopping_cart</mat-icon>
+        </button></li>
+
+    <li><button appAddToFavorite [id]="item.id"
+      class="add-to-favorite" (click)="addToFavorite(item.id)">
         <span>В избранное</span>
         <mat-icon>favorite_border</mat-icon>
       </button></li>
+
+      <li><button appDeleteFromFavorite [id]="item.id"
+        class="delete-from-favorite" (click)="deleteFromFavorite(item.id)">
+        <span>Удалить из</span>
+        <mat-icon>favorite_border</mat-icon>
+      </button></li>
+
   </ul>
 </div>
 </div>

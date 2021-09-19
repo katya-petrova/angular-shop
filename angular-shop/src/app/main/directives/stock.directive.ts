@@ -18,10 +18,10 @@ export class StockDirective implements OnChanges {
     if (+this.stockAmount < 5) {
       this.renderer.setStyle(this.elRef.nativeElement, 'backgroundColor', 'red');
     }
-    if (+this.stockAmount > 5 && +this.stockAmount < 10) {
+    if (+this.stockAmount > 5 && +this.stockAmount < 20) {
       this.renderer.setStyle(this.elRef.nativeElement, 'backgroundColor', 'orange');
     }
-    if (+this.stockAmount > 10) {
+    if (+this.stockAmount > 20) {
       this.renderer.setStyle(this.elRef.nativeElement, 'backgroundColor', '#719e00');
     }
   }

@@ -32,7 +32,7 @@
   .product {
     position: relative;
     margin: 1rem;
-    padding: 0;
+    // padding: 0;
     text-align: center;
     border: 1px solid #e1e1e1;
     box-shadow: rgb(0 0 0 / 20%) 0 0 8px;
@@ -42,6 +42,7 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    overflow: hidden;
 
     .product-stock {
       position: absolute;
@@ -52,6 +53,10 @@
       height: 20px;
       background: #719e00;
     }
+  }
+
+  .product-option {
+    width: 100%;
   }
 
   .product-options-list {
@@ -66,23 +71,35 @@
     border-top: 1px solid #e1e1e1;
     transition: all 0.48s ease;
 
+    li button.delete-from-card,
+    li button.delete-from-favorite {
+      display: none;
+      padding: 12px 21px;
+    }
+
     li button {
       display: flex;
       justify-content: center;
       align-items: center;
       border: 0;
       border-radius: 0;
-      padding: 12px 18px;
+      padding: 12px 20px;
       background: #fff;
       color: #a6a6a6;
       cursor: pointer;
       transition: all 0.48s ease;
 
-      &.add-to-favorite:hover {
+      span {
+        white-space: nowrap;
+      }
+
+      &.add-to-favorite:hover,
+      &.delete-from-favorite:hover {
         background: #dd1f26;
       }
 
-      &.add-to-card:hover {
+      &.add-to-card:hover,
+      &.delete-from-card:hover {
         background: #7a0085;
       }
 

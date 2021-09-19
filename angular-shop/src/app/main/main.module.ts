@@ -14,6 +14,10 @@ import { MainRoutingModule } from './main-routing.module';
 import { SortPipe } from './pipes/sort.pipe';
 import { ItemPageComponent } from './pages/item-page/item-page.component';
 import { StockDirective } from './directives/stock.directive';
+import { AddToCartDirective } from './directives/add-to-cart.directive';
+import { DeleteFromCartDirective } from './directives/delete-from-cart.directive';
+import { AddToFavoriteDirective } from './directives/add-to-favorite.directive';
+import { DeleteFromFavoriteDirective } from './directives/delete-from-favorite.directive';
 
 @NgModule({
   declarations: [
@@ -24,6 +28,10 @@ import { StockDirective } from './directives/stock.directive';
     SortPipe,
     ItemPageComponent,
     StockDirective,
+    AddToCartDirective,
+    DeleteFromCartDirective,
+    AddToFavoriteDirective,
+    DeleteFromFavoriteDirective,
   ],
   imports: [
     CommonModule,

@@ -37,10 +37,10 @@
   <app-account-dropdown></app-account-dropdown>
   </mat-menu>
 
-  <div class="basket">
+  <div class="basket" >
     <button type="button" class="btn mb-2 mb-md-0 btn-primary btn-block btn-round"><span>Корзина</span>
       <div class="icon icon-round d-flex align-items-center justify-content-center">
-        <mat-icon>shopping_cart</mat-icon>
+        <mat-icon [matBadge]="itemsInCart" matBadgeOverlap="true">shopping_cart</mat-icon>
       </div>
       </button>
   </div>

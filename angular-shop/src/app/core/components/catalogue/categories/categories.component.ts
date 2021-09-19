@@ -1,6 +1,6 @@
 /* eslint-disable no-return-assign */
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ICategories } from 'src/app/core/models/categories.model';
 import { CatalogueService } from 'src/app/core/services/catalogue.service';
 
@@ -21,7 +21,6 @@ export class CategoriesComponent implements OnInit {
   constructor(
     public catalogueService: CatalogueService,
     private router: Router,
-    private route: ActivatedRoute,
   ) {}
 
   ngOnInit(): void {
@@ -29,6 +28,7 @@ export class CategoriesComponent implements OnInit {
       this.categories = data;
       this.subCategories = this.categories[0].subCategories;
       this.currentCategory = this.categories[0].name;
+      this.categoryId = this.categories[0].id;
     });
   }
 
@@ -40,5 +40,9 @@ export class CategoriesComponent implements OnInit {
 
   public goToCatergoriesPage(url: string, id: string) {
     this.router.navigate([url, id]);
+  }
+
+  public test(url: string, id: string) {
+    this.router.navigate([`${url}/${id}`]);
   }
 }

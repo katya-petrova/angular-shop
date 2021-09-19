@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { CategoriesService } from 'src/app/core/services/categories.service';
 import { Item } from 'src/app/shared/models/igoods.model';
+import { ItemOptionsService } from '../../services/item-options.service';
 
 @Component({
   selector: 'app-subcategories-page',
@@ -24,11 +25,10 @@ export class SubcategoriesPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     public categoriesService: CategoriesService,
-    private router: Router,
+    private itemOptionsService: ItemOptionsService,
   ) {}
 
   ngOnInit(): void {
-    console.log('hello from subs');
     this.categoryId = this.route.snapshot.params.category;
     this.subcategoryId = this.route.snapshot.params.sub;
     this.categoriesService
@@ -50,7 +50,23 @@ export class SubcategoriesPageComponent implements OnInit {
     this.sortValue = this.sortValue === 2 ? -2 : 2;
   }
 
-  public goToItemPage(url: string, id: string) {
-    this.router.navigate([url, id]);
+  public addToCart(id: string) {
+    this.itemOptionsService.addToCart(id).subscribe();
+    this.itemOptionsService.updateUserInfo();
+  }
+
+  public deleteFromCart(id: string) {
+    this.itemOptionsService.deleteFromCart(id).subscribe();
+    this.itemOptionsService.updateUserInfo();
+  }
+
+  public addToFavorite(id: string) {
+    this.itemOptionsService.addToFavorite(id).subscribe();
+    this.itemOptionsService.updateUserInfo();
+  }
+
+  public deleteFromFavorite(id: string) {
+    this.itemOptionsService.deleteFromFavorite(id).subscribe();
+    this.itemOptionsService.updateUserInfo();
   }
 }

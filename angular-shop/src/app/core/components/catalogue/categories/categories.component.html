@@ -15,7 +15,7 @@
       <ul class="subcategories">
         <li
         *ngFor="let subcategory of subCategories"
-        > <a [routerLink]="[ categoryId, subcategory.id]" routerLinkActive="active"> {{ subcategory.name }} </a> </li>
+        > <a (click)="test(categoryId, subcategory.id)"> {{ subcategory.name }} </a> </li>
       </ul>
     </div>
   </div>

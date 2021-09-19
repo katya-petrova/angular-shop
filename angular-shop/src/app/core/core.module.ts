@@ -5,6 +5,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatBadgeModule } from '@angular/material/badge';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
@@ -37,6 +38,7 @@ import { SearchResultsComponent } from './components/search-results/search-resul
     MatButtonModule,
     MatExpansionModule,
     MatMenuModule,
+    MatBadgeModule,
     MainModule,
     FormsModule,
     RouterModule,

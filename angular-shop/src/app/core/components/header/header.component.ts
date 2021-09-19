@@ -10,6 +10,6 @@ export class HeaderComponent implements OnInit {
   constructor(public userService: UserService) {}
 
   ngOnInit(): void {
-    // this.userService.isLogged();
+    this.userService.isLogged();
   }
 }
