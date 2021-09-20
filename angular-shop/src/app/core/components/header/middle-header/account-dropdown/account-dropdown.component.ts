@@ -18,6 +18,8 @@ export class AccountDropdownComponent implements OnInit, OnDestroy {
 
   public isLogged: boolean | true | undefined;
 
+  public favorites!: number | undefined;
+
   userInfoSubscription!: Subscription;
 
   constructor(
@@ -32,6 +34,7 @@ export class AccountDropdownComponent implements OnInit, OnDestroy {
       .userInfo$.subscribe((info) => {
         this.userName = info?.firstName;
         this.lastName = info?.lastName;
+        this.favorites = info?.favorites.length;
         this.isUserLogged();
       });
   }

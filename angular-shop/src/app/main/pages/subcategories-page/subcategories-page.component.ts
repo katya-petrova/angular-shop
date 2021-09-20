@@ -29,13 +29,15 @@ export class SubcategoriesPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.categoryId = this.route.snapshot.params.category;
-    this.subcategoryId = this.route.snapshot.params.sub;
-    this.categoriesService
-      .getItemsByCategory(this.categoryId, this.subcategoryId)
-      .subscribe((data) => {
-        this.products = data;
-      });
+    this.route.params.subscribe((params) => {
+      this.categoryId = params.category;
+      this.subcategoryId = params.sub;
+      this.categoriesService
+        .getItemsByCategory(this.categoryId, this.subcategoryId)
+        .subscribe((data) => {
+          this.products = data;
+        });
+    });
   }
 
   public showMoreItems() {

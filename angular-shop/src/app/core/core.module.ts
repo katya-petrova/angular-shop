@@ -18,6 +18,7 @@ import { AuthPopupComponent } from './components/auth-popup/auth-popup.component
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { CategoriesComponent } from './components/catalogue/categories/categories.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SearchResultsComponent } from './components/search-results/search-resul
     CatalogueComponent,
     CategoriesComponent,
     SearchResultsComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,
@@ -45,6 +47,7 @@ import { SearchResultsComponent } from './components/search-results/search-resul
   ],
   exports: [
     HeaderComponent,
+    FooterComponent,
   ],
 })
 export class CoreModule { }
