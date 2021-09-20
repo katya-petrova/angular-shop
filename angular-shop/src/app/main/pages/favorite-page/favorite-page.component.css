@@ -1,0 +1,101 @@
+.favorites-wrapper {
+  text-align: center;
+}
+
+.favorites-wrapper h1 {
+  margin-top: 30px;
+}
+
+.favorites-wrapper .favorite-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 40px;
+  cursor: pointer;
+}
+
+.favorites-wrapper .favorite-item .product-name {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.favorites-wrapper .favorite-item .product-price {
+  font-weight: 500;
+  font-size: 16px;
+  color: #719e00;
+}
+
+.favorites-wrapper .favorite-item .product-img {
+  margin: 15px;
+  width: 140px;
+  height: 140px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.favorites-wrapper .favorite-item ul.item-options-list {
+  list-style-type: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.favorites-wrapper .favorite-item ul.item-options-list li button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 0;
+  border-radius: 0;
+  padding: 12px 18px;
+  background: #fff;
+  color: black;
+  cursor: pointer;
+  margin-left: 15px;
+  border: 5px solid #adce37;
+  width: 165px;
+  -webkit-transition: all 0.48s ease;
+  transition: all 0.48s ease;
+}
+
+.favorites-wrapper .favorite-item ul.item-options-list li button.delete-from-favorite:hover {
+  background: #dd1f26;
+  border: 5px solid #dd1f26;
+  color: white;
+}
+
+.favorites-wrapper .favorite-item ul.item-options-list li button.add-to-card:hover {
+  background: #7a0085;
+  border: 5px solid #7a0085;
+  color: white;
+}
+
+.favorites-wrapper .favorite-item ul.item-options-list li button span {
+  margin-right: 7px;
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  font-size: 1.3rem;
+  color: #d3d3d3;
+}
+
+.full {
+  color: red;
+}
+
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: red;
+}
+/*# sourceMappingURL=favorite-page.component.css.map */

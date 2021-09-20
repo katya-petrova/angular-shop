@@ -17,11 +17,8 @@ export class TopHeaderComponent implements OnInit {
   constructor(private locationService: LocationService) {}
 
   ngOnInit(): void {
-    this.locationService.getIpAddress().subscribe((res) => {
-      this.ipaddress = res.ip;
-      this.locationService.getGEOLocation(this.ipaddress).subscribe((res) => {
-        this.city = res.city;
-      });
+    this.locationService.getLocation().subscribe((data: any) => {
+      this.city = data.city;
     });
   }
 }

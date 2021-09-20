@@ -1,0 +1,144 @@
+.top-header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 3rem 0 3rem;
+}
+
+.top-header-container .location-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 20px;
+  margin-right: auto;
+  margin-bottom: 2px;
+  text-align: left;
+  border: 0;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+  background: none;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+.top-header-container .location-btn span {
+  margin-left: 5px;
+}
+
+.top-header-container .contacts-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 520px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.top-header-container .contacts-container .viber-contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top-header-container .contacts-container .a1-contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top-header-container .contacts-container .a1-contact img {
+  height: 25px;
+  width: 25px;
+}
+
+.top-header-container .contacts-container .contacts-dropdown {
+  width: 200px;
+  position: relative;
+}
+
+.top-header-container .contacts-container .contacts-dropdown .mat-expansion-panel {
+  position: absolute;
+  top: -15px;
+  width: 200px;
+  z-index: 2;
+}
+
+.top-header-container .contacts-container .contacts-dropdown .mat-expansion-panel .mat-expansion-panel-header {
+  padding: 0 16px;
+  height: 29px;
+}
+
+.top-header-container .contacts-container .contacts-dropdown .mat-expansion-panel .dropdown-contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 3px;
+}
+
+.top-header-container .contacts-container .contacts-dropdown .mat-expansion-panel p {
+  max-width: 400px;
+}
+
+.top-header-container .contacts-container .contacts-dropdown .mat-expansion-panel img {
+  width: 19px;
+}
+
+.top-header-container .contact-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 12px;
+  color: #6b6568;
+}
+
+.top-header-container .contact-center .contact-center-logo {
+  margin: 5px;
+}
+
+.top-header-container .contact-center p {
+  margin: 0;
+}
+/*# sourceMappingURL=top-header.component.css.map */

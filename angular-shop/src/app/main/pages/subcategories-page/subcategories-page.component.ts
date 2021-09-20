@@ -53,7 +53,7 @@ export class SubcategoriesPageComponent implements OnInit {
   }
 
   public addToCart(id: string) {
-    this.itemOptionsService.addToCart(id).subscribe();
+    this.itemOptionsService.addToCart(id);
     this.itemOptionsService.updateUserInfo();
   }
 

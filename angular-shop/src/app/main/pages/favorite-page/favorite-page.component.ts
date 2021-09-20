@@ -37,7 +37,7 @@ export class FavoritePageComponent implements OnInit {
       this.categoriesService
         .getItemsArr(this.favoritesArr)
         .subscribe((data) => (this.favoriteItems = data));
-    }, 400);
+    }, 500);
   }
 
   public addToCart(id: string) {

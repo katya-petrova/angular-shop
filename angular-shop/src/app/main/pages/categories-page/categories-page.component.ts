@@ -1,6 +1,6 @@
 /* eslint-disable prefer-destructuring */
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { ICategories } from 'src/app/core/models/categories.model';
 import { CategoriesService } from 'src/app/core/services/categories.service';
@@ -31,14 +31,12 @@ export class CategoriesPageComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.resultId = this.route.snapshot.params.category;
-    this.getCurrentCategory(this.resultId);
-    this.router.events.subscribe((val) => {
-      if (val instanceof NavigationEnd) {
-        this.resultId = val.url.toString().split('/')[1];
+    setTimeout(() => {
+      this.route.params.subscribe((val) => {
+        this.resultId = val.category;
         this.getCurrentCategory(this.resultId);
-      }
-    });
+      });
+    }, 400);
   }
 
   getCurrentCategory(value:string) {
@@ -51,6 +49,6 @@ export class CategoriesPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    console.log('i destroyed');
+
   }
 }
