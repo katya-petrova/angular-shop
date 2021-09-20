@@ -1,0 +1,62 @@
+.account-dropdown {
+  width: 215px;
+  padding: 12px 27px;
+  border-radius: 6px;
+  z-index: 15;
+}
+
+.account-dropdown .username {
+  text-align: center;
+}
+
+.account-dropdown .user-auth {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.account-dropdown .user-auth img {
+  width: 55px;
+}
+
+.account-dropdown .user-auth .auth-btn {
+  display: block;
+  margin: 0 auto;
+  border: 0;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  background: #718c31;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.account-dropdown .shopping-cart,
+.account-dropdown .favorites,
+.account-dropdown .watched,
+.account-dropdown .comparison {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.account-dropdown .shopping-cart .mat-icon,
+.account-dropdown .favorites .mat-icon,
+.account-dropdown .watched .mat-icon,
+.account-dropdown .comparison .mat-icon {
+  margin-top: -3px;
+  margin-right: 8px;
+}
+/*# sourceMappingURL=account-dropdown.component.css.map */

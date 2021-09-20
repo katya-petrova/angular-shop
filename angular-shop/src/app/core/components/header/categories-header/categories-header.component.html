@@ -1,0 +1,7 @@
+<div class="categories-wrapper">
+  <div class="categories-container">
+    <ul class="categories">
+      <li *ngFor="let item of response"><a [routerLink]="[ '', item.id]" routerLinkActive="active">{{ item.name }}</a></li>
+    </ul>
+  </div>
+</div>

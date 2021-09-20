@@ -1,0 +1,39 @@
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  min-width: 900px;
+  background: #a6c73852;
+  color: #613c3d;
+  a {
+    color: #613c3d;
+  }
+
+  .footer-top {
+    margin: 50px 200px 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 18px;
+
+    .messengers {
+
+    }
+  }
+
+  .footer-bottom {
+    margin-top: 40px;
+    display: flex;
+    align-self: center;
+    margin-bottom: 30px;
+
+    i {
+      font-size: 30px;
+      margin: 0 20px;
+    }
+  }
+}

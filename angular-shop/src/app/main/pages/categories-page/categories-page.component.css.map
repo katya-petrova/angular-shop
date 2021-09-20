@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,cAAc,CAAC;EACb,MAAM,EAAE,MAAM;EACd,SAAS,EAAE,KAAK;CAWjB;;AAbD,AAIE,cAJY,CAIZ,EAAE,CAAC;EACD,WAAW,EAAE,GAAG;EAChB,SAAS,EAAE,IAAI;CAChB;;AAPH,AASE,cATY,CASZ,mBAAmB,CAAC;EAClB,OAAO,EAAE,CAAC;EACV,eAAe,EAAE,IAAI;CACtB",
+    "sources": [
+        "categories-page.component.scss"
+    ],
+    "names": [],
+    "file": "categories-page.component.css"
+}

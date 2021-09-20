@@ -1,0 +1,28 @@
+.catalogue {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.catalogue .categories {
+  padding-right: 10px;
+  border-right: 1px solid #8080804a;
+}
+
+.catalogue .cat-item {
+  cursor: pointer;
+}
+
+.catalogue .cat-item:hover {
+  background: #abcc3669;
+}
+
+.catalogue .subcategories {
+  cursor: pointer;
+  list-style-type: none;
+}
+
+.catalogue .subcategories .current-category {
+  margin-left: 40px;
+}
+/*# sourceMappingURL=categories.component.css.map */

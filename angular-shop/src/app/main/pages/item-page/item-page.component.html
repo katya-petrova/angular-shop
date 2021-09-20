@@ -1,0 +1,66 @@
+<div class="info-wrapper">
+  <div *ngIf="item" class="item-info">
+<h1 >{{item.name}}</h1>
+<p class="item-price">{{item.price}} бел.руб.</p>
+<div class="item-option">
+  <ul class="item-options-list">
+
+    <li><button appAddToCart [id]="item.id"
+      class="add-to-card" (click)="addToCart(item.id)">
+        <span>В корзину</span>
+        <mat-icon>shopping_cart</mat-icon>
+      </button></li>
+
+      <li><button appDeleteFromCart [id]="item.id"
+        class="delete-from-card" (click)="deleteFromCart(item.id)">
+          <span>Удалить из</span><mat-icon>shopping_cart</mat-icon>
+        </button></li>
+
+    <li><button appAddToFavorite [id]="item.id"
+      class="add-to-favorite" (click)="addToFavorite(item.id)">
+        <span>В избранное</span>
+        <mat-icon>favorite_border</mat-icon>
+      </button></li>
+
+      <li><button appDeleteFromFavorite [id]="item.id"
+        class="delete-from-favorite" (click)="deleteFromFavorite(item.id)">
+        <span>Удалить из</span>
+        <mat-icon>favorite_border</mat-icon>
+      </button></li>
+
+  </ul>
+</div>
+</div>
+</div>
+
+
+  <!-- <div сlass="item-slider-wrapper"> -->
+<swiper style="--swiper-navigation-color: #adce37;--swiper-pagination-color: #adce37" [loop]="true" [spaceBetween]="10"
+  [navigation]="true" [thumbs]="{ swiper: thumbsSwiper }" class="mySwiper2">
+  <ng-template swiperSlide class="swiper-slide" *ngFor="let img of images"
+    ><img src="{{ img }}"
+  /></ng-template>
+</swiper>
+
+<swiper (swiper)="thumbsSwiper = $event" [loop]="true" [spaceBetween]="10" [slidesPerView]="3" [freeMode]="true"
+  [watchSlidesProgress]="true" class="mySwiper">
+  <ng-template swiperSlide class="swiper-slide" *ngFor="let img of images"
+    ><img src="{{ img }}"
+  /></ng-template>
+  </swiper>
+  <!-- </div> -->
+
+<!-- <div сlass="item-page-wrapper"> -->
+
+<div *ngIf="item" class="item-description">
+  <mat-tab-group mat-align-tabs="center">
+  <mat-tab class="descr-item" label="Описание">{{item.description}}</mat-tab>
+  <mat-tab class="descr-item" label="Отзывы">Берите, не пожалеете</mat-tab>
+</mat-tab-group>
+</div>
+
+<!-- </div> -->
+
+
+
+

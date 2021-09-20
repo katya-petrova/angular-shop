@@ -1,0 +1,27 @@
+<div class="account-dropdown">
+  <p class="username">{{userName}} {{lastName}}</p>
+  <div class="user-auth">
+    <div class="user-po">
+      <img src="../../../../../../assets/icons/user.png" alt="user">
+    </div>
+    <button *ngIf="!isLogged" mat-button (click)="openDialog()" class="auth-btn">Войти</button>
+    <button *ngIf="isLogged" mat-raised-button color="warn" (click)="logOut()" class="logout-btn">Выйти</button>
+  </div>
+  <div class="shopping-cart">
+    <mat-icon>shopping_cart</mat-icon>
+    <span>Корзина</span>
+  </div>
+  <hr>
+  <div class="favorites" [matBadge]="favorites" routerLink="favorite">
+    <mat-icon>favorite_border</mat-icon>
+    <span>Избранные товары</span>
+  </div>
+  <div class="watched">
+    <mat-icon>visibility</mat-icon>
+    <span>Просмотренные</span>
+  </div>
+  <div class="comparison">
+    <mat-icon>thumbs_up_down</mat-icon>
+    <span>Списки сравнения</span>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// .cdk-overlay-container, .cdk-global-overlay-wrapper {
+//   pointer-events: none;
+//   top: 6px;
+//   left: -66px;
+// }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

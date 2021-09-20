@@ -1,0 +1,69 @@
+<div class="subcats-page-wrapper">
+  <div class="product-sorting">
+    <p class="filter">Сортировать по:</p>
+    <p class="filter-param" (click)="sortByPrice()">цене</p>
+    <p class="filter-param" (click)="sortByRating()">популярности</p>
+  </div>
+
+  <div class="subcat-products">
+    <div *ngFor="let product of products | slice : startPage:paginationLimit | sortPipe:sortValue"
+      routerLinkActive="active" class="product">
+
+      <div appStock [stockAmount]="product.availableAmount"
+      class="product-stock" [matTooltip]="'Товаров на складе: ' + product.availableAmount" matTooltipPosition="above"></div>
+
+      <div class="product-img" [ngStyle]="{ 'background-image': 'url(' + product.imageUrls[0] + ')' }"
+        [routerLink]="product.id"></div>
+
+      <div class="product-raiting">
+        <ng-template #t let-fill="fill">
+          <span class="star" [class.full]="fill === 100">
+            <span class="half" [style.width.%]="fill">&starf;</span>&star;
+          </span>
+        </ng-template>
+        <ngb-rating [rate]="product.rating" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+      </div>
+
+      <div class="product-info" [routerLink]="product.id">
+        <p class="product-name">{{ product.name }}</p>
+        <p class="product-price">{{ product.price }} p.</p>
+      </div>
+
+      <div class="product-option">
+
+        <ul class="product-options-list">
+
+          <li><button appAddToCart [id]="product.id"
+            class="add-to-card" (click)="addToCart(product.id)">
+              <span>В корзину</span><mat-icon>shopping_cart</mat-icon>
+            </button></li>
+
+            <li><button appDeleteFromCart [id]="product.id"
+              class="delete-from-card" (click)="deleteFromCart(product.id)">
+                <span>Удалить из</span><mat-icon>shopping_cart</mat-icon>
+              </button></li>
+
+          <li><button appAddToFavorite [id]="product.id"
+            class="add-to-favorite" (click)="addToFavorite(product.id)">
+              <span>В избранное</span>
+              <mat-icon>favorite_border</mat-icon>
+            </button></li>
+
+            <li><button appDeleteFromFavorite [id]="product.id"
+              class="delete-from-favorite" (click)="deleteFromFavorite(product.id)">
+              <span>Удалить из</span>
+              <mat-icon>favorite_border</mat-icon>
+            </button></li>
+
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+
+  <button mat-raised-button class="load-more-btn" (click)="showMoreItems()">
+    Показать еще
+  </button>
+
+</div>

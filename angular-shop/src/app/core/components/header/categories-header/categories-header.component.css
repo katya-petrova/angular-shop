@@ -1,0 +1,30 @@
+.categories-wrapper {
+  width: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(#8dad3d), color-stop(51%, #9dc81a), to(#adce37));
+  background: linear-gradient(90deg, #8dad3d 0%, #9dc81a 51%, #adce37 100%);
+}
+
+.categories-wrapper .categories-container {
+  margin: 0 3rem 0 3rem;
+}
+
+.categories-wrapper .categories-container .categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.categories-wrapper .categories-container .categories li {
+  padding: 0.5rem;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.categories-wrapper .categories-container .categories li a {
+  color: black;
+}
+/*# sourceMappingURL=categories-header.component.css.map */
