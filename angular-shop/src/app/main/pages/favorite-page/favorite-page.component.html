@@ -1,0 +1,51 @@
+<div class="favorites-wrapper">
+
+  <h1>Избранные товары</h1>
+
+  <div *ngFor="let item of favoriteItems" class="favorite-item" appDeleteFromFavorite [id]="item.id">
+    <div class="product-img" [ngStyle]="{ 'background-image': 'url(' + item.imageUrls[0] + ')' }"
+      [routerLink]="['', item.category, item.subCategory, item.id]"></div>
+
+    <div class="product-info">
+
+      <p class="product-name" [routerLink]="['', item.category, item.subCategory, item.id]">{{ item.name }}</p>
+
+      <div class="product-raiting">
+        <ng-template #t let-fill="fill">
+          <span class="star" [class.full]="fill === 100">
+            <span class="half" [style.width.%]="fill">&starf;</span>&star;
+          </span>
+        </ng-template>
+        <ngb-rating [rate]="item.rating" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+      </div>
+
+
+      <p class="product-price">{{ item.price }} p.</p>
+
+      <div class="item-option">
+        <ul class="item-options-list">
+
+          <li><button appAddToCart [id]="item.id"
+            class="add-to-card" (click)="addToCart(item.id)">
+              <span>В корзину</span>
+              <mat-icon>shopping_cart</mat-icon>
+            </button></li>
+
+            <li><button appDeleteFromCart [id]="item.id"
+              class="delete-from-card" (click)="deleteFromCart(item.id)">
+                <span>Удалить из</span><mat-icon>shopping_cart</mat-icon>
+              </button></li>
+
+            <li><button appDeleteFromFavorite [id]="item.id"
+              class="delete-from-favorite" (click)="deleteFromFavorite(item.id)">
+              <span>Удалить из</span>
+              <mat-icon>favorite_border</mat-icon>
+            </button></li>
+
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</div>

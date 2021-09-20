@@ -30,13 +30,13 @@ export class ItemPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.itemId = this.route.snapshot.params.id;
-    this.categoriesService.getItemById(this.itemId).subscribe((data) => {
-      this.item = data;
-      this.images = data.imageUrls;
-      console.log(this.item);
+    this.route.params.subscribe((params) => {
+      this.itemId = params.id;
+      this.categoriesService.getItemById(this.itemId).subscribe((data) => {
+        this.item = data;
+        this.images = data.imageUrls;
+      });
     });
-    console.log(this.itemId);
   }
 
   public addToCart(id: string) {

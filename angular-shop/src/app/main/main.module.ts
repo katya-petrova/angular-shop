@@ -18,6 +18,7 @@ import { AddToCartDirective } from './directives/add-to-cart.directive';
 import { DeleteFromCartDirective } from './directives/delete-from-cart.directive';
 import { AddToFavoriteDirective } from './directives/add-to-favorite.directive';
 import { DeleteFromFavoriteDirective } from './directives/delete-from-favorite.directive';
+import { FavoritePageComponent } from './pages/favorite-page/favorite-page.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { DeleteFromFavoriteDirective } from './directives/delete-from-favorite.d
     DeleteFromCartDirective,
     AddToFavoriteDirective,
     DeleteFromFavoriteDirective,
+    FavoritePageComponent,
   ],
   imports: [
     CommonModule,

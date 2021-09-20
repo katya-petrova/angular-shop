@@ -94,3 +94,49 @@
     }
   }
 }
+
+@media (max-width: 1200px) {
+
+  .btn {
+    padding: 43px 44px 0px 0px;
+
+    span {
+      display: none;
+    }
+
+    .icon.icon-round {
+      border-radius: 50%;
+    }
+    .icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 45px;
+      bottom: 0;
+      background: #fff;
+    }
+  }
+
+  .btn .icon.icon-round {
+    border-radius: 50%;
+  }
+  .btn .icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    bottom: 0;
+    background: #a6c73852;
+  }
+
+}
+
+@media (max-width: 1200px) {
+  .shop-logo img {
+    width: 125px;
+    margin: 15px;
+  }
+  .searchbar {
+    width: 28rem;
+  }
+}

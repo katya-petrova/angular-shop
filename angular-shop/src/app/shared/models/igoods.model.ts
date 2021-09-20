@@ -14,4 +14,6 @@ export interface Item {
   description: string,
   isInCart: boolean,
   isFavorite: boolean,
+  category: string,
+  subCategory: string
 }

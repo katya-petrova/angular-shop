@@ -1,6 +1,7 @@
+/* eslint-disable no-plusplus */
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
 import { Item } from 'src/app/shared/models/igoods.model';
 import { ICategories } from '../models/categories.model';
 
@@ -24,5 +25,13 @@ export class CategoriesService {
   getItemById(id: string) {
     const url = `${this.url}/goods/item/${id}`;
     return this.http.get<Item>(url);
+  }
+
+  getItemsArr(ids: string[]) {
+    const requests = [];
+    for (let i = 0; i < ids.length; i++) {
+      requests.push(this.http.get<Item>(`${this.url}/goods/item/${ids[i]}`));
+    }
+    return forkJoin(requests);
   }
 }

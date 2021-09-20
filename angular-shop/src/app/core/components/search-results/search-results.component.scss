@@ -21,12 +21,18 @@
       margin: 0 20px;
     }
 
-    .item-price {
+    .search-item-price {
       font-weight: 500;
     }
   }
 
   li:hover {
     outline: 1px solid green;
+  }
+}
+
+@media (max-width: 1200px) {
+  .search-results {
+    width: 28rem;
   }
 }
